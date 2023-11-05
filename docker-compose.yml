@@ -15,5 +15,12 @@ services:
       - "${POSTGRES_PORT}:5432"
     restart: always
 
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 8888:8080
+
 volumes:
     postgres:
