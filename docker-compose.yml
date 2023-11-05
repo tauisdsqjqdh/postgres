@@ -13,8 +13,6 @@ services:
        - ${POSTGRES_VOLUME}:/data/postgres
     ports:
       - "${POSTGRES_PORT}:5432"
-    networks:
-      - postgres
     restart: always
 
 volumes:
