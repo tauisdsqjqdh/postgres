@@ -16,30 +16,6 @@ services:
     networks:
       - postgres
     restart: always
-  
-  pgadmin:
-    container_name: pgadmin_container
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
-      PGADMIN_CONFIG_SERVER_MODE: 'False'
-      PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: "False"
-    volumes:
-       - pgadmin:/var/lib/pgadmin
-
-    ports:
-      - "${PGADMIN_PORT}:80"
-    networks:
-      - postgres
-    restart: always
-    depends_on:
-      - postgres
-
-networks:
-  postgres:
-    driver: bridge
 
 volumes:
     postgres:
-    pgadmin:
